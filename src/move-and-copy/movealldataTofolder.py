@@ -39,8 +39,7 @@ def moveOneToAnother(input_path, output_path):
             file_list.extend(glob.glob(file_glob))
         for i in file_list:
             shutil.copyfile(i, os.path.join(output_path, os.path.basename(i)))
-            shutil.copyfile(i, os.path.join(output_path, os.path.basename(i)))
-
+            # shutil.copyfile(i, os.path.join(output_path, os.path.basename(i)))
 
 if __name__ == "__main__":
     path = 'E:/data/'
