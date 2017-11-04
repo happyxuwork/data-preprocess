@@ -41,8 +41,8 @@ def extend_img_in_every_folder(input_path, resize_with, resize_heigh, out_with, 
     return_path = os.path.abspath(output_path)
     return_path = return_path + "/handle/"
     os.mkdir(output_path + "/handle/")
-    diff_with = resize_with - out_with
-    diff_heigt = resize_heigh - out_heigh
+    diff_with = resize_with - out_with + 1
+    diff_heigt = resize_heigh - out_heigh + 1
     sub_dirs = [x[0] for x in os.walk(input_path)]
     is_root_dir = True
     for sub_dir in sub_dirs:
@@ -93,6 +93,6 @@ def extend_img_in_every_folder(input_path, resize_with, resize_heigh, out_with, 
 
 if __name__ == '__main__':
     input_path = "E:/file/xuqiang/imagedata/"
-    output_path = extend_img_in_every_folder(input_path, 128, 128, 125, 125)
+    output_path = extend_img_in_every_folder(input_path, 512, 512, 512, 512)
     tofolder_path = "E:/file/xuqiang/all/"
     move_all_data_to_floder(output_path, tofolder_path)
