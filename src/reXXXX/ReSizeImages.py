@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
 
 
-    input_path = "E:/file/xuqiang/imagedata/"
-    output_path = "E:/file/xuqiang/all2/"
+    input_path = "E:/file/xuqiang/resort/"
+    output_path = "E:/file/xuqiang/all-128-128/"
 
     fixed_size(128, 128, input_path, output_path)

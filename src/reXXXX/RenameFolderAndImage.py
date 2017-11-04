@@ -39,5 +39,5 @@ def rename(input_path):
 
 
 if __name__ == '__main__':
-    input_path = "E:/file/xuqiang/imagedata/"
+    input_path = "E:/file/xuqiang/resort/"
     rename(input_path)
