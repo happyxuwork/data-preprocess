@@ -42,6 +42,6 @@ def moveOneToAnother(input_path, output_path):
             # shutil.copyfile(i, os.path.join(output_path, os.path.basename(i)))
 
 if __name__ == "__main__":
-    path = 'E:/data/'
-    new_path = 'E:/dls/'
+    path = 'F:/handle/extend/'
+    new_path = 'F:/handle/extend4bei/'
     moveOneToAnother(path, new_path)
