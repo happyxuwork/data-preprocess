@@ -35,9 +35,9 @@ def rename(input_path):
         for i in file_list:
             j = j + 1
             name = os.path.join(input_path, base_name, str(j) + ".jpg")
-            os.rename(i, os.path.join(input_path, base_name, base_name + "-" + str(j) + ".jpg"))
+            os.rename(i, os.path.join(input_path, base_name, base_name + str(j)+str(j) + ".jpg"))
 
 
 if __name__ == '__main__':
-    input_path = "E:/file/xuqiang/resort/"
+    input_path = "F:/X---Y/handleY/"
     rename(input_path)

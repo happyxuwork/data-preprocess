@@ -36,7 +36,7 @@ def fixed_size(width, height, input_path, output_path):
             out.save(output_path + image_name + image_suffix)
             out = None
             im = None
-        #time.sleep(1)
+        time.sleep(1)
 
         # im = Image.open(图像位置)
         # out = im.resize((width, height), Image.ANTIALIAS)
@@ -51,6 +51,6 @@ if __name__ == "__main__":
 
 
     input_path = "F:/handle/origin/"
-    output_path = "F:/handle/originsize1204/"
+    output_path = "F:/handle/originsize1024/"
 
-    fixed_size(512, 512, input_path, output_path)
+    fixed_size(1024, 1024, input_path, output_path)
