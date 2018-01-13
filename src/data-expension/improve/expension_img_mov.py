@@ -2,10 +2,14 @@
 '''
 @author: xuqiang
 '''
-import os
 import shutil
 import glob
 import tensorflow as tf
+from PIL import Image
+import shutil
+import os
+import glob
+import time
 
 
 # move the file that you want suffix in the input_path to out_path
@@ -90,9 +94,105 @@ def extend_img_in_every_folder(input_path, resize_with, resize_heigh, out_with, 
     print("所有文件夹中的图片已处理完毕")
     return return_path
 
+'''
+将文件夹底下的图像扩充beishu倍，然后resize到resize_with和resize_heigh
+'''
+def extend_multiply_img_in_every_folder(input_path,output_path,beishu,resize_with,resize_heigh):
+    # # 重命名文件底下的所有文件夹及里面的图像
+    # sub_dirs = [x[0] for x in os.walk(input_path)]
+    # is_root_dir = True
+    # num_floder = 0
+    # for sub_dir in sub_dirs:
+    #     if is_root_dir:
+    #         is_root_dir = False
+    #         continue
+    #     num_floder = num_floder + 1
+    #     rename_dsc = os.path.join(input_path, str(num_floder))
+    #     os.rename(sub_dir, rename_dsc)
+    #     # 得到子文件夹的名称
+    #     base_name = str(os.path.basename(rename_dsc))
+    #
+    #     # 获取当前目录下有效的图片文件
+    #     extensions = ['jpg']
+    #     file_list = []
+    #     for extension in extensions:
+    #         file_glob = os.path.join(input_path, base_name, '*.' + extension)
+    #         # get all the images of one folder of the input_path
+    #         file_list.extend(glob.glob(file_glob))
+    #     num_images = len(file_list)
+    #     j = 0
+    #     for i in file_list:
+    #         j = j + 1
+    #         name = os.path.join(input_path, base_name, str(j) + ".jpg")
+    #         os.rename(i, os.path.join(input_path, base_name, base_name + str(j) + str(j) + ".jpg"))
 
+
+    #扩充图像
+    temp_path = os.path.dirname(input_path + os.path.sep + "../")
+    return_path = os.path.abspath(temp_path)
+    return_path = return_path + "/extend/"
+    os.mkdir(temp_path + "/extend/")
+    sub_dirs = [x[0] for x in os.walk(input_path)]
+    is_root_dir = True
+    extensions = ['jpg']
+    for sub_dir in sub_dirs:
+        if is_root_dir:
+            is_root_dir = False
+            continue
+        # 获得当前文件夹
+        base_name = os.path.basename(sub_dir)
+        # 获取当前目录下有效的图片文件
+
+        file_list = []
+        for extension in extensions:
+            file_glob = os.path.join(sub_dir, '*.' + extension)
+            # get all the images of one folder of the input_path
+            file_list.extend(glob.glob(file_glob))
+        for image in file_list:
+            img_name = os.path.basename(os.path.splitext(image)[0])
+            img_suffix = os.path.splitext(image)[1]
+            image = Image.open(image)
+            width = image.size[0]  # 图片大小
+            height = image.size[1]
+            w_step = int((width / beishu) -1)
+            h_step = int((height / beishu) -1)
+            for i in range(w_step, width, w_step):
+                for j in range(h_step, height, h_step):
+                    box = (i - w_step, j - h_step, i, j)
+                    img_resize = image.crop(box)
+                    img_resize.save(return_path + img_name + "-" + str(i) + str(j) + img_suffix)
+    file_list = []
+    for extension in extensions:
+        file_glob = os.path.join(return_path, '*.' + extension)
+        # get all the images of one folder of the input_path
+        file_list.extend(glob.glob(file_glob))
+        for image in file_list:
+            im = Image.open(image)
+            out = im.resize((resize_with, resize_heigh), Image.ANTIALIAS)
+            image_name = os.path.basename(os.path.splitext(image)[0])
+            image_suffix = os.path.splitext(image)[1]
+            out.save(output_path + image_name + image_suffix)
+    shutil.rmtree(return_path)
+    time.sleep(2)
 if __name__ == '__main__':
-    input_path = "E:/file/xuqiang/imagedata/"
-    output_path = extend_img_in_every_folder(input_path, 512, 512, 512, 512)
-    tofolder_path = "E:/file/xuqiang/all/"
-    move_all_data_to_floder(output_path, tofolder_path)
+    #input_path = "F:/handle/origin/"
+    # output_path = extend_img_in_every_folder(input_path, 256, 256, 256, 256)
+    # tofolder_path = "F:/handle/originsize256/"
+    # move_all_data_to_floder(output_path, tofolder_path)
+
+    # input_path = "F:/X---Y/handleY/"
+    # output_path1 = "F:/X---Y/extendY-3-3/"
+    # output_path2 = "F:/X---Y/extendY-2-2/"
+    # output_path3 = "F:/X---Y/extendY-1-1/"
+    # extend_multiply_img_in_every_folder(input_path, output_path1, 3, 256, 256)
+    # extend_multiply_img_in_every_folder(input_path, output_path2, 2, 256, 256)
+    # extend_multiply_img_in_every_folder(input_path, output_path3, 1, 256, 256)
+
+    input_path = "F:/X---Y/extend-Candidates-one/"
+    output_path1 = "F:/X---Y/extend-one/"
+    extend_multiply_img_in_every_folder(input_path, output_path1, 5, 260, 260)
+
+    # input_path = "F:/X---Y/granite/Candidates-one/"
+    # output_path1 = "F:/X---Y/granite/Candidates-one-3-3/"
+    # extend_multiply_img_in_every_folder(input_path, output_path1, 3, 256, 256)
+

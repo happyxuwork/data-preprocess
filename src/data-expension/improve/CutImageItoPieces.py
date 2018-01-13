@@ -18,7 +18,7 @@ def cutImage(input_path, output_path):
         extensions = ['jpg']
         file_list = []
         parent_path = os.path.dirname(input_path + os.path.sep + "../")
-        path = parent_path + "/extend/" + dir_name + "/"
+        path = parent_path + "/extend2-2/" + dir_name + "/"
         os.makedirs(path)
         for extension in extensions:
             file_glob = os.path.join(input_path, dir_name, '*.' + extension)
@@ -31,16 +31,16 @@ def cutImage(input_path, output_path):
             width = image.size[0]  # 图片大小
             height = image.size[1]
             # 自己的图片扩充3*3=9倍
-            for i in range(1034, width, 1034):
-                for j in range(1034, height, 1034):
-                    box = (i - 1034, j - 1034, i, j)
+            for i in range(1032, width, 1032):
+                for j in range(1032, height, 1032):
+                    box = (i - 1032, j - 1032, i, j)
                     img_resize = image.crop(box)
                     img_resize.save(path + img_name + "-" + str(i) + str(j) + img_suffix)
 
 
 if __name__ == "__main__":
-    input_path = "E:/file/xuqiang/data/"
-    output_path = "E:/file/xuqiang/all/"
+    input_path = "F:/domainX/"
+    output_path = "F:/domainX/aa23-extend/"
     cutImage(input_path, output_path)
 
     # img = Image.open("E:/file/xuqiang/data/哈哈/IMG_20171029_161055.jpg")
