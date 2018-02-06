@@ -130,8 +130,8 @@ def extend_multiply_img_in_every_folder(input_path,output_path,beishu,resize_wit
     #扩充图像
     temp_path = os.path.dirname(input_path + os.path.sep + "../")
     return_path = os.path.abspath(temp_path)
-    return_path = return_path + "/extend/"
-    os.mkdir(temp_path + "/extend/")
+    return_path = return_path + "/extendtmp/"
+    os.mkdir(temp_path + "/extendtmp/")
     sub_dirs = [x[0] for x in os.walk(input_path)]
     is_root_dir = True
     extensions = ['jpg']
@@ -188,9 +188,9 @@ if __name__ == '__main__':
     # extend_multiply_img_in_every_folder(input_path, output_path2, 2, 256, 256)
     # extend_multiply_img_in_every_folder(input_path, output_path3, 1, 256, 256)
 
-    input_path = "F:/X---Y/extend-Candidates-one/"
-    output_path1 = "F:/X---Y/extend-one/"
-    extend_multiply_img_in_every_folder(input_path, output_path1, 5, 260, 260)
+    input_path = "F:/X---Y/granite/test/testB/"
+    output_path1 = "F:/X---Y/granite/extend/testB/"
+    extend_multiply_img_in_every_folder(input_path, output_path1, 4, 256, 256)
 
     # input_path = "F:/X---Y/granite/Candidates-one/"
     # output_path1 = "F:/X---Y/granite/Candidates-one-3-3/"

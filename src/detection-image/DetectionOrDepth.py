@@ -31,6 +31,8 @@ def detective_img_or_RGB(input_path):
             im = Image.open(image)
             if im.mode != 'RGB':
                 print(image)
+                #remove it may be a good ideal
+                # os.remove(image)
            # r,g,b = im.split()
             # r.show()
             # g.show()
@@ -44,7 +46,9 @@ def detective_img_or_RGB(input_path):
 
 if __name__ == "__main__":
 
-    input_path = "F:/研究生/图像数据/数据/其它/calculate/calculate-input-sharpness/zebra/"
+    # input_path = "F:/研究生/图像数据/数据/其它/calculate/calculate-input-sharpness/zebra/"
+    # input_path = "F:/研究生/图像数据/数据/其它/celebA/Img/handle/smileOrNot/noSmile"
+    input_path = "F:/研究生/图像数据/数据/其它/cycleGAN_database/maps/maps/segment/"
     #output_path = "E:/file/xuqiang/all-128-128/"
 
     detective_img_or_RGB(input_path)

@@ -66,6 +66,7 @@ def dateSetApart(inputPth):
 if __name__ == "__main__":
      # inputFolderPath = "../data-caculate-complex/"
      # inputFolderPath = "F:/研究生/图像数据/数据/其它/calculate/calculate-shapness/"
-     inputFolderPath = "F:/研究生/图像数据/数据/其它/calculate/calculate-input-sharpness/zebra/"
+     # inputFolderPath = "F:/研究生/图像数据/数据/其它/calculate/calculate-input-sharpness/zebra/"
+     inputFolderPath = "F:/研究生/图像数据/数据/其它/selfCombine/noSmiletosmile/"
      # inputFolderPath = "F:/研究生/图像数据/数据/其它/onetomany/"
      dateSetApart(inputFolderPath)

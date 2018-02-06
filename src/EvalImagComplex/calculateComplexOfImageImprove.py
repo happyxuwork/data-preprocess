@@ -79,7 +79,12 @@ if __name__ == "__main__":
     # inputFolderPath = "F:/caculateComplex/marble2marble-20-250/"
     # inputFolderPath = "F:/研究生/图像数据/数据/其它/cityscapes/caculateComplex/"
     # inputFolderPath = "F:/研究生/图像数据/数据/其它/calculate/"
-    inputFolderPath = "G:/桌面引用/待办事情/小论文图像/拼图/"
+    # inputFolderPath = "G:/桌面引用/待办事情/小论文图像/拼图/"
+    # inputFolderPath = "F:/研究生/图像数据/数据/其它/selfCombine/noSmiletosmile/"
+    # inputFolderPath = "F:/caculateComplex/segment/"
+    # inputFolderPath = "F:/研究生/图像数据/数据/其它/edges2shoes/edges2shoes/segmentTrain/"
+    # inputFolderPath = "F:/研究生/图像数据/数据/其它/edges2handbags/test/"
+    inputFolderPath = "F:/研究生/图像数据/数据/其它/edges2handbags/edges2handbags/segmentVal/"
     calculateFolderImage(inputFolderPath)
 
 

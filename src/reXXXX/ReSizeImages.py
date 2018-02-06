@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
 
 
-    input_path = "F:/handle/origin/"
-    output_path = "F:/handle/originsize1204/"
+    input_path = "F:/研究生/图像数据/数据/其它/celebA/Img/resize/rectangle/smile/"
+    output_path = "F:/研究生/图像数据/数据/其它/celebA/Img/resize/rectangleto256/smile/"
 
-    fixed_size(512, 512, input_path, output_path)
+    fixed_size(256, 256, input_path, output_path)
