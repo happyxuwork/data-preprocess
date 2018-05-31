@@ -7,8 +7,8 @@ import face_recognition
 import os
 
 # for (int i = 1; i <= 10; i++)
-dataPath = "F:/研究生/图像数据/数据/其它/celebA/Img/handle/smileOrNot/noSmile/"
-movePath = "F:/研究生/图像数据/数据/其它/celebA/Img/resize/rectangle/noSmile/"
+dataPath = "F:/研究生/图像数据/数据/其它/celebA/Img/handle/more/"
+movePath = "F:/研究生/图像数据/数据/其它/celebA/Img/handle/rectangle/"
 list = os.listdir(dataPath)
 for i in range(0, len(list)):
     imgName = os.path.basename(list[i])

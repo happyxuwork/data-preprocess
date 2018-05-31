@@ -11,8 +11,8 @@ hasf = open("smile.txt")
 noLine = nof.readline()
 hasLine = hasf.readline()
 # dataPath = "F:/研究生/图像数据/数据/其它/celebA/Img/img_align_celeba/img_align_celeba/"
-dataPath = "F:/研究生/图像数据/数据/其它/celebA/Img/test/"
-movePath = "F:/研究生/图像数据/数据/其它/celebA/Img/handle/smileOrNot/"
+dataPath = "F:/研究生/图像数据/数据/其它/celebA/Img/img_celeba.7z/img_celeba.7z/img_celeba/"
+movePath = "F:/研究生/图像数据/数据/其它/celebA/Img/handle/more/"
 list = os.listdir(dataPath)
 hasGo = True
 noGo = True
@@ -27,13 +27,16 @@ for i in range(0, len(list)):
 
     if (noGo and (imgName == noArray[0])):
         oldname= dataPath+imgName
-        newname=movePath+"noSmile/"+imgName
-        shutil.move(oldname, newname)
+        # newname=movePath+"noSmile/"+imgName
+        newname=movePath+imgName
+        # shutil.move(oldname, newname)
+        shutil.copy(oldname, newname)
         noLine = nof.readline()
     elif (hasGo and (imgName == hasArray[0])):
         oldname= dataPath+imgName
-        newname=movePath+"smile/"+imgName
-        shutil.move(oldname, newname)
+        newname=movePath+imgName
+        # shutil.move(oldname, newname)
+        shutil.copy(oldname, newname)
         hasLine = hasf.readline()
 
     if (i % 100 == 0): print(imgName)
