@@ -23,8 +23,8 @@ def moveTheFile(sorceDir,targetDir):
             newestCheckPoinFile = getNewestFile(newestCheckPoinFileList)
             filNeedPath = os.path.join(sorceDir,taskDir,factorDir,newestCheckPoinFile)
             print(filNeedPath)
-            # needFileExtension = ['checkpoint','cyclegan-199.data-00000-of-00001','cyclegan-199.index','cyclegan-199.meta']
-            needFileExtension = ['1.txt','2.txt']
+            needFileExtension = ['checkpoint','cyclegan-199.data-00000-of-00001','cyclegan-199.index','cyclegan-199.meta']
+            # needFileExtension = ['1.txt','2.txt']
             os.makedirs(os.path.join(targetDir, taskDir, factorDir))
             for extension in needFileExtension:
                 print(os.path.join(filNeedPath,extension))
