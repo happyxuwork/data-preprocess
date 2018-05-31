@@ -99,6 +99,6 @@ def dateSetApart(inputPth):
 if __name__ == "__main__":
     # inputFolderPath = "F:/研究生/图像数据/数据/其它/calculate/补充/calculate-diversity/"
     # inputFolderPath = "F:/研究生/图像数据/数据/其它/calculate/calculate-input-diversity/zebra/"
-    inputFolderPath = "F:/研究生/图像数据/数据/其它/selfCombine/noSmiletosmile/"
+    inputFolderPath = "F:/converImgtoTensor/data-training/"
     dateSetApart(inputFolderPath)
     # nearestImageDisInOneSet("../data-caculate-complex/fakeA_100_0.jpg","../data-caculate-complex/demo/")

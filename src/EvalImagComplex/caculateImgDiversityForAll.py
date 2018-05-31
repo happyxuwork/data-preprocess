@@ -1,6 +1,8 @@
 # -*- coding: UTF-8 -*-
 '''
 @author: xuqiang
+随机取两张图像a1,a2,计算他们之间的欧式距离d（a1,a2）,
+重复4次，取平均值，平均值越大，多样性越高
 '''
 import os
 import numpy as np

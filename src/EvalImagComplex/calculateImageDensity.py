@@ -1,6 +1,8 @@
 # -*- coding: UTF-8 -*-
 '''
 @author: xuqiang
+随机取一张图像a1，找到集合中与a1最近的图像a2，得到欧式距离d(a1,a2)
+重复4次，取平均值，平均值越大，密度越小
 '''
 import os
 import numpy as np

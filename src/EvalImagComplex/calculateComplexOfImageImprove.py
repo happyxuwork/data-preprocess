@@ -84,7 +84,10 @@ if __name__ == "__main__":
     # inputFolderPath = "F:/caculateComplex/segment/"
     # inputFolderPath = "F:/研究生/图像数据/数据/其它/edges2shoes/edges2shoes/segmentTrain/"
     # inputFolderPath = "F:/研究生/图像数据/数据/其它/edges2handbags/test/"
-    inputFolderPath = "F:/研究生/图像数据/数据/其它/edges2handbags/edges2handbags/segmentVal/"
+    # inputFolderPath = "F:/研究生/图像数据/数据/其它/edges2handbags/edges2handbags/segmentVal/"
+    # inputFolderPath = "G:/桌面引用/待办事情/小论文图像/拼图/人脸"
+    # inputFolderPath = "F:/研究生/图像数据/数据/其它/selfCombine/noSmiletosmile/noSmile/"
+    inputFolderPath = "F:/converImgtoTensor/data-training/"
     calculateFolderImage(inputFolderPath)
 
 
