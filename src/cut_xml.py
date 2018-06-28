@@ -1,5 +1,5 @@
 #-*- coding=utf-8 -*-
-
+#https://www.cnblogs.com/CheeseZH/p/4026686.html
 import xml.etree.ElementTree as ET
 from PIL import Image
 import os
